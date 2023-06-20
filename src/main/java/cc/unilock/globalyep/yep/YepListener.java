@@ -18,8 +18,6 @@ public class YepListener {
 
     @Subscribe
     public void onPluginMessage(PluginMessageEvent event) {
-        logger.info("Received plugin message: " + event.toString());
-
         if (event.getIdentifier().equals(GlobalYep.YepIdentifier) && event.getSource() instanceof ServerConnection connection) {
             String data = new String(event.getData(), StandardCharsets.UTF_8);
 
